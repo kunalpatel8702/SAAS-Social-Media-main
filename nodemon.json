@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "."
+    ],
+    "ext": "js,json",
+    "ignore": [
+        "node_modules",
+        ".git"
+    ],
+    "legacyWatch": true,
+    "delay": 1000
+}

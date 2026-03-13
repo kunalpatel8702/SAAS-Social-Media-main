@@ -1,28 +1,22 @@
-# SAAS Social Media App
+# AI Agents Module
 
-## Running the Project with Docker
+This directory contains the core AI Agent modules for the SaaS platform.
 
-To run the entire stack (Frontend, Backend, and Redis) using Docker, make sure you have Docker and Docker Compose installed on your system.
+## 1. Customer Support Agent (`customer_support/`)
+- **Main Purpose**: Provides a deployable AI Support Widget for external websites.
+- **Key Features**:
+  - Semantic Search (Pinecone RAG) for knowledge base retrieval.
+  - Automated ticket creation and escalation.
+  - Real-time chat via WebSockets/API.
+  - Inbox management for human agents.
 
-### Option 1: Development Mode (Hot Reloading)
+## 2. eCommerce Manager (`ecommerce_manager/`)
+- **Main Purpose**: An autonomous AI brain for Shopify/eCommerce stores.
+- **Key Features**:
+  - **Signal Detection**: Monitors inventory, reviews, and sales.
+  - **Decision Engine**: Automatically generates action plans (e.g., Marketing, Pricing, Operations).
+  - **Autonomous Agents**: Specialized roles (Growth, Security, Competitor analysis).
+  - **Generators**: AI Product descriptions and Landing pages.
 
-From the root directory of the project, run:
-
-```bash
-docker-compose up --build
-```
-
-This will build and start all the services. 
-
-- **Frontend** will be accessible at: [http://localhost:5173](http://localhost:5173)
-- **Backend API** will be accessible at: [http://localhost:5000](http://localhost:5000)
-- **Redis Database** will be accessible at `localhost:6379`
-
-### Environment Variables
-Docker Compose automatically loads the `.env` files from both the `Backend` and `frontend` directories. Make sure your environment variables are set correctly in `Backend/.env` and `frontend/.env`.
-
-To stop the services, press `Ctrl + C` in the terminal, or run:
-
-```bash
-docker-compose down
-```
+---
+**Deployment Note**: Ensure `GROQ_API_KEY` and `PINECONE_API_KEY` are configured in the server environment.
